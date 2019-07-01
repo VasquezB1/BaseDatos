@@ -7,11 +7,16 @@ package ec.edu.ups.Vista;
 
 import ec.edu.ups.controladores.ControladorDireccion;
 import ec.edu.ups.controladores.ControladorPersona;
+import ec.edu.ups.ventanas.ActualizarDireccion;
 import ec.edu.ups.ventanas.ActualizarPersona;
+import ec.edu.ups.ventanas.BuscarDireccion;
 import ec.edu.ups.ventanas.BuscarPersona;
 import ec.edu.ups.ventanas.CrearDireccion;
 import ec.edu.ups.ventanas.CrearPersona;
+import ec.edu.ups.ventanas.Direcciones;
 import ec.edu.ups.ventanas.EliminarPersona;
+import ec.edu.ups.ventanas.ElminarDireccion;
+import ec.edu.ups.ventanas.ListarDirecciones;
 import ec.edu.ups.ventanas.ListarPersona;
 import javax.swing.JOptionPane;
 
@@ -28,6 +33,12 @@ public class BaseDatos extends javax.swing.JFrame {
     private ActualizarPersona actualizarPersona;
     private ListarPersona listarPersona;
     private CrearDireccion crearDireccion;
+    private BuscarDireccion buscarDireccion;
+    private ElminarDireccion elminarDireccion; 
+    private ActualizarDireccion actualizarDireccion;
+    private ListarDirecciones listarDirecciones;
+    private Direcciones direcciones;
+            
     /**
      * Creates new form BaseDatos
      */
@@ -62,6 +73,7 @@ public class BaseDatos extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,16 +148,44 @@ public class BaseDatos extends javax.swing.JFrame {
         jMenu2.add(jMenuItem6);
 
         jMenuItem7.setText("Buscar");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem7);
 
         jMenuItem8.setText("Actualizar");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem8);
 
         jMenuItem9.setText("Eliminar");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem9);
 
         jMenuItem10.setText("Listar");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem10);
+
+        jMenuItem11.setText("Direcciones");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem11);
 
         jMenuBar1.add(jMenu2);
 
@@ -286,6 +326,106 @@ public class BaseDatos extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+         String x = BuscarDireccion.x;
+        try{
+             if(x ==null){
+                 if (buscarDireccion == null || buscarDireccion.isVisible() == false) {
+            buscarDireccion = new BuscarDireccion();
+            buscarDireccion.setVisible(true);
+            DesktopPane.add(buscarDireccion);
+            DesktopPane.moveToFront(buscarDireccion);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        String x = ElminarDireccion.x;
+        try{
+             if(x ==null){
+                 if (elminarDireccion == null || elminarDireccion.isVisible() == false) {
+            elminarDireccion = new ElminarDireccion();
+            elminarDireccion.setVisible(true);
+            DesktopPane.add(elminarDireccion);
+            DesktopPane.moveToFront(elminarDireccion);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        String x = ActualizarDireccion.x;
+        try{
+             if(x ==null){
+                 if (actualizarDireccion == null || actualizarDireccion.isVisible() == false) {
+            actualizarDireccion = new ActualizarDireccion();
+            actualizarDireccion.setVisible(true);
+            DesktopPane.add(actualizarDireccion);
+            DesktopPane.moveToFront(actualizarDireccion);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+         String x = ListarDirecciones.x;
+        try{
+             if(x ==null){
+                 if (listarDirecciones == null || listarDirecciones.isVisible() == false) {
+            listarDirecciones = new ListarDirecciones();
+            listarDirecciones.setVisible(true);
+            DesktopPane.add(listarDirecciones);
+            DesktopPane.moveToFront(listarDirecciones);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+         String x =Direcciones.x;
+        try{
+             if(x ==null){
+                 if (direcciones == null || direcciones.isVisible() == false) {
+            direcciones = new Direcciones();
+            direcciones.setVisible(true);
+            DesktopPane.add(direcciones);
+            DesktopPane.moveToFront(direcciones);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -328,6 +468,7 @@ public class BaseDatos extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

@@ -48,14 +48,12 @@ public static String x;
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
         txtapellido = new javax.swing.JTextField();
         txtedad = new javax.swing.JTextField();
         txtsueldo = new javax.swing.JTextField();
         txttelefono = new javax.swing.JTextField();
         txtnacimiento = new javax.swing.JTextField();
-        txtcodigo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtcedula = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -108,9 +106,6 @@ public static String x;
         jLabel8.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel8.setText("Fecha de Nacimiento:");
 
-        jLabel9.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
-        jLabel9.setText("Codigo:");
-
         txtnombre.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -143,8 +138,6 @@ public static String x;
             }
         });
 
-        txtcodigo.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -157,8 +150,7 @@ public static String x;
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
@@ -166,8 +158,7 @@ public static String x;
                     .addComponent(txtedad)
                     .addComponent(txtsueldo)
                     .addComponent(txttelefono)
-                    .addComponent(txtnacimiento)
-                    .addComponent(txtcodigo))
+                    .addComponent(txtnacimiento))
                 .addGap(15, 15, 15))
         );
         jPanel1Layout.setVerticalGroup(
@@ -199,11 +190,7 @@ public static String x;
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(txtnacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtcodigo))
-                .addContainerGap())
+                .addGap(41, 41, 41))
         );
 
         jLabel2.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
@@ -358,11 +345,9 @@ public static String x;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtcedula;
-    private javax.swing.JTextField txtcodigo;
     private javax.swing.JTextField txtedad;
     private javax.swing.JTextField txtnacimiento;
     private javax.swing.JTextField txtnombre;

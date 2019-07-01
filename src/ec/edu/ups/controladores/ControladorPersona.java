@@ -59,8 +59,8 @@ public class ControladorPersona {
                 p.setApellido(rs.getString("PER_APELLIDO"));
                 p.setNombre(rs.getString("PER_NOMBRE"));
                 p.setEdad(rs.getInt("PER_EDAD"));
-                p.setFecha(rs.getDate("PER_FECHA"));
-                p.setCelular(rs.getString("PER_CELULAR"));
+                p.setFecha(rs.getDate("PER_NACIMIENTO"));
+                p.setCelular(rs.getString("PER_TELEFONO"));
                 p.setSalario(rs.getDouble("PER_SALARIO"));
             }
 
@@ -73,7 +73,8 @@ public class ControladorPersona {
     }
 
     public void modificar(Persona p) throws SQLException {
-        String sql = "UPDATE \"PERSONA\" SET \"PER_NOMBRE\" = '" + p.getNombre() + "',\"PER_APELLIDO\" = '" + p.getApellido() + "',\"PER_EDAD\" = " + p.getEdad() + ",\"PER_FECHA\" = '" + formato.format(p.getFecha())+"',\"PER_CELULAR\" = '"+p.getCelular()+"',\"PER_SALARIO\" = "+p.getSalario()+" WHERE \"PER_CEDULA\" = '"+p.getCedula()+"';";
+        String sql = "UPDATE \"PERSONA\" SET \"PER_NOMBRE\" = '" + p.getNombre() + "',\"PER_APELLIDO\" = '" + p.getApellido() + "',\"PER_EDAD\" = " + p.getEdad() + ",\"PER_NACIMIENTO\" = '" + formato.format(p.getFecha())+"',\"PER_TELEFONO\" = '"+p.getCelular()+"',\"PER_SALARIO\" = "+p.getSalario()+" WHERE \"PER_CEDULA\" = '"+p.getCedula()+"';";
+        System.out.println(sql);
         baseDeDatos.conectar();
         try {
             Statement sta = baseDeDatos.getConexionBD().createStatement();
@@ -82,6 +83,7 @@ public class ControladorPersona {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+      
     }
     
     public void eliminar(String cedula) throws SQLException{
@@ -113,8 +115,8 @@ public class ControladorPersona {
                 p.setApellido(rs.getString("PER_APELLIDO"));
                 p.setNombre(rs.getString("PER_NOMBRE"));
                 p.setEdad(rs.getInt("PER_EDAD"));
-                p.setFecha(rs.getDate("PER_FECHA"));
-                p.setCelular(rs.getString("PER_CELULAR"));
+                p.setFecha(rs.getDate("PER_NACIMIENTO"));
+                p.setCelular(rs.getString("PER_TELEFONO"));
                 p.setSalario(rs.getDouble("PER_SALARIO"));
                 lista.add(p);
             }
