@@ -12,17 +12,26 @@ import java.util.Date;
  * @author Byron PC
  */
 public class Persona {
-
-    private String cedula;
+  private String cedula;
     private String nombre;
     private String apellido;
     private int edad;
-    private double sueldo;
-    private String telefono;
-    private Date fechaNacimiento;
-    private int codigo;
+    private Date fecha;
+    private String celular;
+    private Double salario;
 
     public Persona() {
+        
+    }
+
+    public Persona(String cedula, String nombre, String apellido, int edad, Date fecha, String celular, Double salario) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.fecha = fecha;
+        this.celular = celular;
+        this.salario = salario;
     }
 
     public String getCedula() {
@@ -57,48 +66,33 @@ public class Persona {
         this.edad = edad;
     }
 
-    public double getSueldo() {
-        return sueldo;
+
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setSueldo(double sueldo) {
-        this.sueldo = sueldo;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getCelular() {
+        return celular;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public Double getSalario() {
+        return salario;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setSalario(Double salario) {
+        this.salario = salario;
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public Persona(String cedula, String nombre, String apellido, int edad, Date fechaNacimiento, String telefono, double sueldo) {
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.sueldo = sueldo;
-        this.telefono = telefono;
-        this.fechaNacimiento = fechaNacimiento;
-
-    }
+ 
+    
 
     @Override
     public String toString() {
@@ -106,10 +100,10 @@ public class Persona {
                 + "\n nombre= " + nombre
                 + "\n apellido= " + apellido
                 + "\n edad= " + edad
-                + "\n sueldo= " + sueldo
-                + "\n telefono= " + telefono
-                + "\n fechaNacimiento= " + fechaNacimiento
-                + "\n codigo= " + codigo + "\n" + '}';
+                + "\n sueldo= " + salario
+                + "\n telefono= " + celular
+                + "\n fechaNacimiento= " + fecha;
+               
     }
 
 }

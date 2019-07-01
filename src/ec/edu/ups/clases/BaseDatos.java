@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.controladores;
+package ec.edu.ups.clases;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,10 +16,10 @@ import java.sql.SQLException;
 public class BaseDatos {
 
     private Connection conexionBD;
-
-    public BaseDatos() {
+    
+    public BaseDatos() {        
     }
-
+    
     public Connection getConexionBD() {
         return conexionBD;
     }
@@ -28,17 +28,17 @@ public class BaseDatos {
         this.conexionBD = conexionBD;
     }
 
-    public void conectar() {
+    public void conectar(){
 
-        String url = "jdbc:postgresql://localhost:5432/BaseDatos";
+      String url = "jdbc:postgresql://localhost:5432/BaseDatosDireccion";
         String user = "postgres";
         String password = "QLJPikrq7833";
 
         try {
             conexionBD = DriverManager.getConnection(url, user, password);
-            if (conexionBD.isValid(5000)) {
+            if(conexionBD.isValid(5000)){
                 System.out.println("Conexion exitosa");
-            }
+        }
         } catch (SQLException error) {
             System.out.println("Error de conexion\n " + error.toString());
         }
@@ -58,4 +58,6 @@ public class BaseDatos {
 
         }
     }
+    
+   
 }

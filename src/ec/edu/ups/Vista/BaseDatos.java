@@ -5,8 +5,14 @@
  */
 package ec.edu.ups.Vista;
 
+import ec.edu.ups.controladores.ControladorDireccion;
 import ec.edu.ups.controladores.ControladorPersona;
+import ec.edu.ups.ventanas.ActualizarPersona;
+import ec.edu.ups.ventanas.BuscarPersona;
+import ec.edu.ups.ventanas.CrearDireccion;
 import ec.edu.ups.ventanas.CrearPersona;
+import ec.edu.ups.ventanas.EliminarPersona;
+import ec.edu.ups.ventanas.ListarPersona;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,8 +21,13 @@ import javax.swing.JOptionPane;
  */
 public class BaseDatos extends javax.swing.JFrame {
     private ControladorPersona controladorPersona;
+    private ControladorDireccion controladorDireccion;
     private CrearPersona crearPersona;
-
+    private BuscarPersona buscarPersona;
+    private EliminarPersona eliminarPersona;
+    private ActualizarPersona actualizarPersona;
+    private ListarPersona listarPersona;
+    private CrearDireccion crearDireccion;
     /**
      * Creates new form BaseDatos
      */
@@ -25,6 +36,7 @@ public class BaseDatos extends javax.swing.JFrame {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         setLocationRelativeTo(null);
+        controladorDireccion= new ControladorDireccion();
     }
 
     /**
@@ -66,6 +78,7 @@ public class BaseDatos extends javax.swing.JFrame {
 
         jMenu1.setText("Persona");
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Crear");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,16 +87,40 @@ public class BaseDatos extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setText("Buscar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setText("Actualizar");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setText("Eliminar");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem4);
 
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem5.setText("Listar");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
         jMenuBar1.add(jMenu1);
@@ -91,6 +128,11 @@ public class BaseDatos extends javax.swing.JFrame {
         jMenu2.setText("Direcciones");
 
         jMenuItem6.setText("Crear");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem6);
 
         jMenuItem7.setText("Buscar");
@@ -129,7 +171,7 @@ public class BaseDatos extends javax.swing.JFrame {
         try{
              if(x ==null){
                  if (crearPersona == null || crearPersona.isVisible() == false) {
-            crearPersona = new CrearPersona(controladorPersona);
+            crearPersona = new CrearPersona();
             crearPersona.setVisible(true);
             DesktopPane.add(crearPersona);
             DesktopPane.moveToFront(crearPersona);
@@ -142,6 +184,107 @@ public class BaseDatos extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        String x = BuscarPersona.x;
+        try{
+             if(x ==null){
+                 if (buscarPersona == null || buscarPersona.isVisible() == false) {
+            buscarPersona = new BuscarPersona();
+            buscarPersona.setVisible(true);
+            DesktopPane.add(buscarPersona);
+            DesktopPane.moveToFront(buscarPersona);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        String x = EliminarPersona.x;
+        try{
+             if(x ==null){
+                 if (eliminarPersona == null || eliminarPersona.isVisible() == false) {
+            eliminarPersona = new EliminarPersona();
+            eliminarPersona.setVisible(true);
+            DesktopPane.add(eliminarPersona);
+            DesktopPane.moveToFront(eliminarPersona);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+         String x = ActualizarPersona.x;
+        try{
+             if(x ==null){
+                 if (actualizarPersona == null || actualizarPersona.isVisible() == false) {
+            actualizarPersona = new ActualizarPersona();
+            actualizarPersona.setVisible(true);
+            DesktopPane.add(actualizarPersona);
+            DesktopPane.moveToFront(actualizarPersona);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+         String x = ListarPersona.x;
+        try{
+             if(x ==null){
+                 if (listarPersona == null || listarPersona.isVisible() == false) {
+            listarPersona = new ListarPersona();
+            listarPersona.setVisible(true);
+            DesktopPane.add(listarPersona);
+            DesktopPane.moveToFront(listarPersona);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        String x = CrearDireccion.x;
+        try{
+             if(x ==null){
+                 if (crearDireccion == null || crearDireccion.isVisible() == false) {
+            crearDireccion = new CrearDireccion();
+            crearDireccion.setVisible(true);
+            DesktopPane.add(crearDireccion);
+            DesktopPane.moveToFront(crearDireccion);
+             }
+         }else{
+                  JOptionPane.showMessageDialog(rootPane, "La ventana esta en ejecucion");
+             }
+        
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
